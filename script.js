@@ -11,7 +11,8 @@ function addBookToLibrary(title, author) {
 }
 
 document.querySelector(".addBook").addEventListener("click", function() {
-    addBookToLibrary(prompt('title'), prompt('author'));
+    event.preventDefault();
+    addBookToLibrary(document.querySelector("#title").value, document.querySelector("#author").value);
 });
 
 document.querySelector(".clearLibrary").addEventListener("click", function() {
@@ -38,3 +39,4 @@ addBookToLibrary("Code of Honor", "Alan Gratz");
 addBookToLibrary("One Piece", "Oda");
 addBookToLibrary("Sam Woo is Not Afraid of Space", "");
 
+document.querySelector(".refreshLibrary").click();

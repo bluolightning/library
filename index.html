@@ -8,11 +8,23 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <button class="addBook">Add book</button>
-    <button class="clearLibrary">Clear library</button>
-    <button class="refreshLibrary">Refresh library</button>
-    <div class="libraryDisplay">
-        <!-- Displayed books go here -->
+
+    <div class="libraryContainer">
+        <button class="clearLibrary">Clear library</button>
+        <button class="refreshLibrary">Refresh library</button>
+        <div class="libraryDisplay">
+            <!-- Displayed books go here -->
+        </div>
     </div>
+    <form>
+        <label for="title">Book Title: </label>
+        <input type="text" id="title" name="title">
+
+        <label for="author">Book Author:</label>
+        <input type="text" id="author" name="author">
+
+        <button class="addBook">Add Book</button>
+    </form>
+
 </body>
 </html>

@@ -1,3 +1,10 @@
+* {
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    line-height: 1.5;
+}
+
 .libraryDisplay > * {
     border: 1px solid white;
     display: inline-block;
@@ -12,7 +19,14 @@
     gap: 20px 10px;
 }
 
-* {
-    background-color: black;
-    color: white;
+form, input {
+    border: 1px solid white;
+    padding: 12px;
+    display: block;
+}
+
+input {
+    margin: 10px;
+    padding: 3px 5px;
+    border-radius: 4px;
 }
