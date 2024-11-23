@@ -41,8 +41,9 @@ document.querySelector(".refreshLibrary").addEventListener("click", function() {
 
         button.setAttribute("order", "order" + orderNumber);
         button.setAttribute("class", "removeBook");
-        readLabel.setAttribute("for", "read");
+        readLabel.setAttribute("for", "read" + orderNumber);
         checkbox.setAttribute("type", "checkbox");
+        checkbox.setAttribute("id", "read" + orderNumber);
 
 
         libraryDisplay.appendChild(h1);
@@ -59,6 +60,22 @@ document.querySelector(".refreshLibrary").addEventListener("click", function() {
             library.splice(orderNum, 1);
 
             document.querySelector(".refreshLibrary").click();
+        });
+
+        // Manages "read" status
+        checkbox.addEventListener("change", function() {
+            let checkboxNum = event.target.getAttribute("id");
+            let orderNum = checkboxNum.replace("read", "");
+            console.log(orderNum);
+
+            if (this.checked) {
+                library[orderNum].readStatus = true;
+                console.log(library[orderNum].readStatus);
+                
+            } else {
+                library[orderNum].readStatus = false;
+                console.log(library[orderNum].readStatus);
+            }
         });
 
         orderNumber++;
