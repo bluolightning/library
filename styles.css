@@ -12,9 +12,9 @@
 
 .libraryDisplay {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
+    grid-template-columns: 200px 200px 200px 200px;
     grid-template-rows: 200px;
-    grid-auto-columns: 200px 200px 200px;
+    grid-auto-columns: 200px 200px 200px 200px;
     grid-auto-rows: 200px;
     gap: 20px 10px;
 }
@@ -29,4 +29,10 @@ input {
     margin: 10px;
     padding: 3px 5px;
     border-radius: 4px;
+}
+
+.libraryDisplay > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
