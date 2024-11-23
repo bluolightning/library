@@ -1,8 +1,18 @@
 const library = [];
 
 function Book(title, author) {
-    this.title = title;
-    this.author = author;
+    if (title === "") {
+        this.title = "Unknown";
+    } else {
+        this.title = title;
+    }
+    
+    if (author === "") {
+        this.author = "Unknown";
+    } else {
+        this.author = author;
+    }
+    
     this.readStatus = false;
 }
 
