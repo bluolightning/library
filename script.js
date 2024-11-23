@@ -12,7 +12,7 @@ function Book(title, author) {
     } else {
         this.author = author;
     }
-    
+
     this.readStatus = false;
 }
 
@@ -21,9 +21,10 @@ function addBookToLibrary(title, author) {
     library.push(book);
 }
 
-document.querySelector(".addBook").addEventListener("click", function() {
+document.querySelector(".addBook").addEventListener("click", function(event) {
     event.preventDefault();
     addBookToLibrary(document.querySelector("#title").value, document.querySelector("#author").value);
+    document.querySelector(".refreshLibrary").click();
 });
 
 document.querySelector(".clearLibrary").addEventListener("click", function() {
