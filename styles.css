@@ -1,5 +1,5 @@
 .libraryDisplay > * {
-    border: 1px solid black;
+    border: 1px solid white;
     display: inline-block;
 }
 
@@ -10,4 +10,9 @@
     grid-auto-columns: 200px 200px;
     grid-auto-rows: 200px;
     gap: 20px 10px;
+}
+
+* {
+    background-color: black;
+    color: white;
 }

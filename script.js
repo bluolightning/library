@@ -14,17 +14,26 @@ document.querySelector(".addBook").addEventListener("click", function() {
     addBookToLibrary(prompt('title'), prompt('author'));
 });
 
+document.querySelector(".clearLibrary").addEventListener("click", function() {
+    document.querySelector(".libraryDisplay").textContent = '';
+});
+
 document.querySelector(".refreshLibrary").addEventListener("click", function() {
     const libraryDisplay = document.querySelector(".libraryDisplay");
 
     for (const book of library) {
-        console.log(book.title);
-        console.log(book.author);
-        console.log("");
+        let h1 = document.createElement("h1");
+        let h2 = document.createElement("h2");
+        
+        h1.textContent = book.title;
+        h2.textContent = book.author;
+
+        libraryDisplay.appendChild(h1);
+        libraryDisplay.appendChild(h2);
     }
 });
 
-addBookToLibrary("This is a book", "This is another one");
+addBookToLibrary("Code of Honor", "Alan Gratz");
 addBookToLibrary("One Piece", "Oda");
-addBookToLibrary("Your Bud", "John James");
+addBookToLibrary("Sam Woo is Not Afraid of Space", "");
 
