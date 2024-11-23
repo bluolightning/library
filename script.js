@@ -19,7 +19,7 @@ document.querySelector(".clearLibrary").addEventListener("click", function() {
     document.querySelector(".libraryDisplay").textContent = '';
 });
 
-// Creates library display
+// Creates or remakes library display
 document.querySelector(".refreshLibrary").addEventListener("click", function() {
     const libraryDisplay = document.querySelector(".libraryDisplay");
     let orderNumber = 0;
@@ -41,16 +41,17 @@ document.querySelector(".refreshLibrary").addEventListener("click", function() {
         libraryDisplay.appendChild(h1);
         libraryDisplay.appendChild(h2);
         libraryDisplay.appendChild(button);
-        orderNumber++;
-
 
         // Remove books
         button.addEventListener("click", function() {
             let attribute = event.target.getAttribute("order")
-        
-            console.log(attribute + " has been removed");
-        
+            let orderNum = attribute.replace("order", "");
+            library.splice(orderNum, 1);
+
+            document.querySelector(".refreshLibrary").click();
         });
+
+        orderNumber++;
     }
 });
 
