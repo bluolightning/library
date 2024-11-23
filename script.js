@@ -19,19 +19,38 @@ document.querySelector(".clearLibrary").addEventListener("click", function() {
     document.querySelector(".libraryDisplay").textContent = '';
 });
 
+// Creates library display
 document.querySelector(".refreshLibrary").addEventListener("click", function() {
     const libraryDisplay = document.querySelector(".libraryDisplay");
+    let orderNumber = 0;
     libraryDisplay.textContent = '';
 
     for (const book of library) {
         let h1 = document.createElement("h1");
         let h2 = document.createElement("h2");
+        let button = document.createElement("button")
         
         h1.textContent = book.title;
         h2.textContent = book.author;
+        button.textContent = "Remove Book";
+
+        button.setAttribute("order", "order" + orderNumber);
+        button.setAttribute("class", "removeBook");
+
 
         libraryDisplay.appendChild(h1);
         libraryDisplay.appendChild(h2);
+        libraryDisplay.appendChild(button);
+        orderNumber++;
+
+
+        // Remove books
+        button.addEventListener("click", function() {
+            let attribute = event.target.getAttribute("order")
+        
+            console.log(attribute + " has been removed");
+        
+        });
     }
 });
 
