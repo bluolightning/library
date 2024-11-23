@@ -23,6 +23,7 @@ form, input {
     border: 1px solid white;
     padding: 12px;
     display: block;
+    margin: 20px 0;
 }
 
 input {
