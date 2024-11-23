@@ -20,6 +20,7 @@ document.querySelector(".clearLibrary").addEventListener("click", function() {
 
 document.querySelector(".refreshLibrary").addEventListener("click", function() {
     const libraryDisplay = document.querySelector(".libraryDisplay");
+    libraryDisplay.textContent = '';
 
     for (const book of library) {
         let h1 = document.createElement("h1");
